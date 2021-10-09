@@ -4,9 +4,11 @@ from . import views
 urlpatterns = [ 
     path('', views.Home.as_view(), name="home"),
     path('about/', views.About.as_view(), name="about"),
-    # dogs/ --> READ (list)
-    # dogs/<int:pk>/ --> Individual Dog Detail
-    # dogs/new/ --> CREATE
-    # dogs/<int:pk>/update --> EDIT
-    # dogs/<int:pk>/delete --> DELETE
+    path('dogs/new/', views.DogCreate.as_view(), name="dog_create"),
+    path('dogs/<int:pk>/update/', views.DogUpdate.as_view(), name="dog_update"),
+    path('dogs/<int:pk>/delete/', views.DogDelete.as_view(), name="dog_delete"),
+    path('contact_us/', views.ContactUs.as_view(), name="contact_us"),
+    # path('dogs/<int:pk>/', views.DogDetail.as_view(), name="dog_detail"),
 ]
+
+

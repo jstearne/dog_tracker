@@ -22,15 +22,15 @@
         </div>
 
         <div>
-            <a class="sidebar-item" id="nav-add-dogs" href="/">Add Dogs</a>
+            <a class="sidebar-item" id="nav-add-dogs" href="{% url 'dog_create' %}">Add Dogs</a>
         </div>
 
         <div>
-            <a class="sidebar-item" id="nav-about-us" href="about/">About Us</a>
+            <a class="sidebar-item" id="nav-about-us" href="{% url 'about' %}">About Us</a>
         </div>
 
         <div>
-            <a class="sidebar-item" id="nav-contact-us" href="/">Contact Us</a>
+            <a class="sidebar-item" id="nav-contact-us" href="{% url 'contact_us' %}">Contact Us</a>
         </div>
 
         </nav>
