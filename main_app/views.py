@@ -55,7 +55,7 @@ class DogDetail(DetailView):
     model = Dog
     template_name = "dog_detail.html"
 
-#    def get_context_data(self, **kwargs):
+
 
 class ContactUs(TemplateView):
     template_name = "contact_us.html"

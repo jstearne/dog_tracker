@@ -16,9 +16,9 @@
   <a class="button is-dark" href="{% url 'dog_list' %}">Clear Search</a>
 </form>
 <div class="gallery">
-  {% for artist in artists %}
+  {% for dog in dogs %}
 <!-- Here we are changing the href of the a tag to use the url DTL -->
-  <a href="{% url 'dog_detail' artist.pk %}">
+  <a href="{% url 'dog_create' %}">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
@@ -31,7 +31,7 @@
     </div>
   </a>
   {% endfor %}
-  <a class="button is-dark" href="{% url 'dog_create' %}">Add Artist</a>
+  <a class="button is-dark" href="{% url 'dog_create' %}">........Add Dog to the Database</a>
 </div>
 
 {% endblock %}
