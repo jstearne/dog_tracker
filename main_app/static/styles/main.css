@@ -1,18 +1,25 @@
 .container {
+    padding-left: 200px;
     flex-grow: 1;
     margin-left: 300px;
-    color: blue;
+    color: purple;
     font-size: x-large;
     padding: 0px 8px 46px 16px;
 }
 
 .sidebar {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    background-color: grey;
+
+
+/*    height: 100%; */
+/*    width: 200px; */
+/*    position: fixed; */
+/*    z-index: 0; /* Stay on top = 1*/
+/*    top: 0;  Stay at the top */
+
+
+    height: 100px;
+    width: 2000px;
+    background-color: yellow;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 100px;
 }

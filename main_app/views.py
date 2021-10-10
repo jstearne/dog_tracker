@@ -19,7 +19,7 @@ class DogCreate(CreateView):
     model = Dog
     fields = ['name', 'type', 'img', 'good_dog']
     template_name = "dog_create.html"
-    success_url = "/dogs/"
+    success_url = "/"
 
 
 class DogUpdate(UpdateView):

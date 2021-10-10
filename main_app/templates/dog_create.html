@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT DOGS!</title>
-</head>
-<body>
-    {% extends 'base.html' %} {% block content %}
-    <h1>................................................Create Dog</h1>
-    {% endblock %}
-</body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<h1>Add a New Dog</h1>
+
+<form method="post">
+  <!-- Security Feature  -->
+  {% csrf_token %}
+  <!--  Generate inputs  -->
+  {{form.as_p}}
+  <!--  Submit form  -->
+  <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
