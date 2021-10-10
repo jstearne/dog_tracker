@@ -36,6 +36,21 @@ class DogDelete(DeleteView):
     success_url = "/dogs/"
 
 
+class DogList(TemplateView):
+    template_name = "dog_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        name = self.request.GET.get('name')
+        if name != None:
+            context["dogs"] = Dog.objects.filter(name__icontains=name) 
+            context["header"] = f"Searching for \"{name}\"" 
+        else:
+            context["dogs"] = Dog.objects.all()
+            context["header"] = "Dogs!"
+        return context
+
+
 class DogDetail(DetailView):
     model = Dog
     template_name = "dog_detail.html"
