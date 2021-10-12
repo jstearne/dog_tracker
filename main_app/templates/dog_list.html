@@ -19,7 +19,7 @@
   {% for dog in dogs %}
 <!-- Here we are changing the href of the a tag to use the url DTL -->
   <a href="{% url 'dog_detail' dog.pk %}">
-    <div class="card">
+    <div>
       <div class="card-image">
         <figure class="image is-square">
           <img src="{{dog.img}}" alt="{{dog.name}}" />

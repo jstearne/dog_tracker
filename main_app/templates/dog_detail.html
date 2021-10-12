@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT DOGS!</title>
+    <title>Dog Tracker</title>
 </head>
 <body>
     {% extends 'base.html' %} {% block content %}
-    <h1>................................................Dog Details</h1>
-
+    <h1 style="text-align: center;">{{dog.name}}</h1>
+    <img src={{dog.img}}>
+    Type: {{dog.type}}
+    <div class="detail__about">
+        <p>Breed Details: Coming Soon!</p>
+    </div>
     <div class="detail__container">
         <div class="buttons">
-            <a href="{% url 'dog_update' dog.pk %}" class="button is-info">
-                <span class="icon">
-                    <i class="fas fa-edit"></i>
-                </span>
-            </a>
-            <a href="{% url 'dog_delete' dog.pk %}" class="button is-danger">
-                <span class="icon">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
+            <a href="{% url 'dog_update' dog.pk %}" class="button is-link is-outlined">Edit</a>
+    
+                <a href="{% url 'dog_delete' dog.pk %}" class="button is-danger is-outlined">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </button>
             </a>
         </div>
-        <div class="detail__about">
-            <h4 class="title is-4">About</h4>
-            <p>{{dog.name}}</p>
-        </div>
+
     {% endblock %}
 </body>
 </html>
