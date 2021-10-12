@@ -8,14 +8,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-
-    <title>Dogs BASE.html</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Underdog&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Underdog&display=swap" rel="stylesheet">
+    <title>Dog Tracker</title>
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
     <!-- <script src="{% static 'scripts/main.js' %}" defer></script> -->
 
   </head>
   <body >
+
+
+
+
         <nav class="sidebar" role="navigation" aria-label="sidebar navigation">
+
+
+          {% if user.is_authenticated %}
+          <div class="navbar-menu navbar-end">
+              <span class="sidebar-item">Welcome: {{user.username}}</span>
+            </div>
+
+            <div>
+              <a class="sidebar-item" href="{% url 'logout' %}">Logout</a>
+          </div>
+          {% else %}
+          <div>
+            <a class="sidebar-item" href="{% url 'login' %}">Log In</a>
+          </div>  
+
+          <div>
+            <a class="sidebar-item" href="{% url 'signup' %}">Sign Up</a>
+          </div>  
+          {% endif %}
+
         <div>
             <a class="sidebar-item" id="nav-all-dogs" href="{% url 'dog_list' %}">All Dogs</a>
         </div>
@@ -43,3 +73,5 @@
     </div>
   </body>
 </html>
+
+

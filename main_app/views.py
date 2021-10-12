@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponse 
 from django.views.generic.base import TemplateView
@@ -21,12 +21,12 @@ class About(TemplateView):
 
 
 class Signup(View):
-    # show a form to fill out
+    # signup form!
     def get(self, request):
         form = UserCreationForm()
         context = {"form": form}
         return render(request, "registration/signup.html", context)
-    # on form submit validate the form and login the user.
+    # when submitted, also log the user in automatically!
     def post(self, request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
