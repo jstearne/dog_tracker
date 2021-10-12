@@ -4,6 +4,7 @@ A full-stack web app for keeping track of dogs. Shows off my understanding of Py
 Learning Python and Django is fun! Read more at Django's documentation site. https://docs.djangoproject.com/en/3.2/
 
 TO DO:
-UX needed for back-to-top button
-Downsize all dogs images, page is too big and clunky
-Background banner for the top and bottom of screen
+1. UX needed for back-to-top button
+2. Background banner for the top and bottom of screen
+3. Ran out of time to build a responsive layout. Secondary design for cell/tablets needed!
+4. Profile page, favorite dogs models
