@@ -2,21 +2,25 @@
     padding-left: 200px;
     flex-grow: 1;
     margin-left: 300px;
-    color: purple;
+    color: orangered;
     font-size: x-large;
     padding: 0px 8px 46px 16px;
 }
 
+h1 {
+    font-family: 'Underdog', cursive;
+    font-size: 72px;
+}
+
+.card-image {
+    border-style: outset;
+    max-width: 600px;
+    max-height: 600px;
+}
+
 .sidebar {
-
-
-/*    height: 100%; */
-/*    width: 200px; */
-/*    position: fixed; */
-/*    z-index: 0; /* Stay on top = 1*/
-/*    top: 0;  Stay at the top */
-
-
+    font-family: 'Underdog', cursive;
+    max-width: 250px;
     height: 100%;
     width: 20%;
     position: fixed;
@@ -36,4 +40,7 @@
     display: block;
 }
 
-
+.sidebar-item:hover {
+  display: block;
+  color: yellow;
+}
