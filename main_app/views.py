@@ -30,7 +30,7 @@ class Signup(View):
     def post(self, request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save()  
             login(request, user)
             return redirect("dog_list")
         else:
@@ -80,7 +80,7 @@ class DogDetail(DetailView):
 
     def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
-            # context["dogs"] = DogList.objects.all()
+        #    context["dogs"] = Dog.objects.filter(name__icontains=name)
             return context
 
 class ContactUs(TemplateView):
