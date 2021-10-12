@@ -1,5 +1,6 @@
-from django.urls import path 
-from . import views 
+from django.urls import path, include
+from . import views
+
 
 urlpatterns = [ 
     path('', views.Home.as_view(), name="home"), # index
@@ -9,7 +10,9 @@ urlpatterns = [
     path('dogs/<int:pk>/update/', views.DogUpdate.as_view(), name="dog_update"),
     path('dogs/<int:pk>/delete/', views.DogDelete.as_view(), name="dog_delete"),
     path('contact_us/', views.ContactUs.as_view(), name="contact_us"),
-  
+    # DOESN'T WORK path('admin/', admin.site.urls),
+    # path('', include('main_app.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 
