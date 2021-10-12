@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Dog Tracker</title>
 </head>
 <body>
     {% extends 'base.html' %} {% block content %}
     <h1 style="text-align: center;">{{dog.name}}</h1>
     <img src={{dog.img}}>
-    Type: {{dog.type}}
+    Type: <span style="color: blue;">{{dog.type}}</span>
     <div class="detail__about">
-        <p>Breed Details: Coming Soon!</p>
-    </div>
+        
+        Is a good dog? <span style="color: Green;">{{dog.good_dog}}</span>
+
+        <p>Breed Details: <span style="color: black;">Coming Soon!</span></p>
+    </div><br>
     <div class="detail__container">
         <div class="buttons">
             <a href="{% url 'dog_update' dog.pk %}" class="button is-link is-outlined">Edit</a>
@@ -26,6 +30,8 @@
                   </button>
             </a>
         </div>
+
+        
 
     {% endblock %}
 </body>

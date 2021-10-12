@@ -5,19 +5,17 @@
 <form class="mb-5" method="get">
   <div class="field has-addons">
     <div class="control">
-      <!--  Our input will search by name of artist  -->
       <input class="input" type="text" name="name" placeholder="name" />
     </div>
     <div class="control">
       <input class="button is-success" type="submit" value="Search" />
     </div>
   </div>
-  <!--  This anchor tag will redirect back to artist list without a query param -->
+
   <a class="button is-dark" href="{% url 'dog_list' %}">Clear Search</a>
 </form>
 <div class="gallery">
   {% for dog in dogs %}
-<!-- Here we are changing the href of the a tag to use the url DTL -->
   <a href="{% url 'dog_detail' dog.pk %}">
     <div>
       <div class="card-image">
@@ -31,9 +29,8 @@
     </div>
   </a>
   {% endfor %}
-  <a class="button is-dark" href="{% url 'dog_create' %}">........Add Dog to the Database</a>
+  <a class="button is-dark" href="{% url 'dog_create' %}">Add Dog to the Database</a>
 
-<!--Tag line-->
 <br><br>
 All images from the Amercian Kennel Club. Visit them to learn more! 
 <br><br>
