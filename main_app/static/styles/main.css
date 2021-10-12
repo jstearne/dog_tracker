@@ -5,7 +5,6 @@
     color: orangered;
     font-size: x-large;
     padding: 0px 8px 46px 16px;
-    
 }
 
 h1 {
@@ -44,10 +43,4 @@ h1 {
 .sidebar-item:hover {
   display: block;
   color: yellow;
-}
-
-
-.search-button {
-    
-    
 }

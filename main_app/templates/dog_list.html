@@ -23,13 +23,11 @@
           <img src="{{dog.img}}" style="max-width: 500px; max-height: 500px;" alt="{{dog.name}}" />
         </figure>
       </div>
-      <div class="card-header">
-        <p class="card-header-title">{{dog.name}}</p>
-      </div>
+      <div class="card-header-title">{{dog.name}}</div>
     </div>
   </a>
   {% endfor %}
-  <a class="search-button" style="align-items: center;" href="{% url 'dog_create' %}">Add Dog to the Database</a>
+  <a class="button is-link" style="align-items: center;" href="{% url 'dog_create' %}">Add Dog to the Database</a>
 
 <br><br>
 All images from the Amercian Kennel Club. Visit <a href="https://www.akc.org/?utm_source=google&utm_medium=cpc&utm_campaign=20200413_akc-rev_responsivesearchad1&utm_content=CoreBrand_AKC&utm_term=akc.org&gclid=Cj0KCQjwwY-LBhD6ARIsACvT72Nfq_npwC-rltFxh_QlHzSHfCuGWCwpnsYpDrWdLSfywz23H3UsH_UaAjsMEALw_wcB">AKC.org</a> to learn more! 

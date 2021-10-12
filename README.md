@@ -1,5 +1,5 @@
 # dog_tracker
-A full-stack web app for keeping track of dogs. Shows off my understanding of Python, Django and postgres SQL. Full CRUD and connected to a Postgres database. Also includes Django Authentication.
+A full-stack web app for keeping track of dogs. Shows off my understanding of Python, Django and postgres SQL. Full CRUD and connected to a Postgres database. Also includes Django Authentication and Bulma for icons.
 
 Learning Python and Django is fun! Read more at Django's documentation site. https://docs.djangoproject.com/en/3.2/
 
