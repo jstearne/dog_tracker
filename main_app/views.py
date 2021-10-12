@@ -5,6 +5,11 @@ from django.views.generic.base import TemplateView
 from .models import Dog
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 class Home(TemplateView):
@@ -13,6 +18,24 @@ class Home(TemplateView):
 
 class About(TemplateView):
     template_name = "about.html"
+
+
+class Signup(View):
+    # show a form to fill out
+    def get(self, request):
+        form = UserCreationForm()
+        context = {"form": form}
+        return render(request, "registration/signup.html", context)
+    # on form submit validate the form and login the user.
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()  
+            login(request, user)
+            return redirect("dog_list")
+        else:
+            context = {"form": form}
+            return render(request, "registration/signup.html", context)
 
 
 class DogCreate(CreateView):
@@ -55,7 +78,10 @@ class DogDetail(DetailView):
     model = Dog
     template_name = "dog_detail.html"
 
-
+    def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+        #    context["dogs"] = Dog.objects.filter(name__icontains=name)
+            return context
 
 class ContactUs(TemplateView):
     template_name = "contact_us.html"

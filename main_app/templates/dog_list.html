@@ -18,7 +18,7 @@
 <div class="gallery">
   {% for dog in dogs %}
 <!-- Here we are changing the href of the a tag to use the url DTL -->
-  <a href="{% url 'dog_create' %}">
+  <a href="{% url 'dog_detail' dog.pk %}">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
@@ -32,6 +32,12 @@
   </a>
   {% endfor %}
   <a class="button is-dark" href="{% url 'dog_create' %}">........Add Dog to the Database</a>
+
+<!--Tag line-->
+<br><br>
+All images from the Amercian Kennel Club. Visit them to learn more! 
+<br><br>
+<a href="https://www.akc.org/?utm_source=google&utm_medium=cpc&utm_campaign=20200413_akc-rev_responsivesearchad1&utm_content=CoreBrand_AKC&utm_term=akc.org&gclid=Cj0KCQjwwY-LBhD6ARIsACvT72Nfq_npwC-rltFxh_QlHzSHfCuGWCwpnsYpDrWdLSfywz23H3UsH_UaAjsMEALw_wcB">AKC.org</a>
 </div>
 
 {% endblock %}
